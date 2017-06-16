@@ -16,14 +16,15 @@
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
+    (at least five characters)
   </p>
  
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
+    character limit is 300
   </p>
  
-  <p>
     <%= f.submit %>
   </p>
 <% end %>
