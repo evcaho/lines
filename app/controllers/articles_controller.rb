@@ -29,10 +29,19 @@ class ArticlesController < ApplicationController
   		@article = Article.new(article_params)
  
   		if @article.save
+  			flash[:success] = "Great! Your post has been created!"
   			redirect_to @article
   		else 
+  			flash.now[:error] = "Rats! Fix your mistakes, please."
   			render 'new'
   		end
+	end
+
+	def destroy
+		@article = Article.find(params[:id])
+		@article.destroy
+
+		redirect_to articles_path
 	end
  
 	private
